@@ -10,9 +10,7 @@ export const getUsersAsync = async (ctx: ParameterizedContext<State>, next: Next
         ctx.response.status = 200
         ctx.body = document
     }
-    else if (equals<{
-        kyoId: string
-    }>(ctx.request.query)) {
+    else if (typeof(ctx.request.query.kyoId) === "string") {
         const document = await UserModel.findOne({ kyoId: ctx.request.query.kyoId }).lean().exec()
         ctx.assert(document, 404)
         ctx.response.status = 200

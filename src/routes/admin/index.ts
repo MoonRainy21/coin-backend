@@ -7,9 +7,9 @@ import { patchMoneyAsync } from "./patchMoneyAsync";
 
 const router = new Router<State>()
 
-router.get('/event', getEventAsync)
-router.get('/users', getUsersAsync)
-router.patch('/event', patchEventAsync)
-router.patch('/money', patchMoneyAsync)
+router.get('/admin/event', getEventAsync)
+router.get('/admin/users', getUsersAsync)
+router.patch('/admin/event', patchEventAsync)
+router.patch('/admin/money', patchMoneyAsync)
 
 export default router

@@ -4,11 +4,12 @@
     "@koa/router": "^12.0.0",
     "@types/crypto-js": "^4.1.1",
     "@types/koa": "^2.13.5",
-    "@types/koa-bodyparser": "^4.3.10",
-    "@types/koa-logger": "^3.1.2",
     "@types/koa__cors": "^3.3.0",
     "@types/koa__router": "^12.0.0",
+    "@types/koa-bodyparser": "^4.3.10",
+    "@types/koa-logger": "^3.1.2",
     "crypto-js": "^4.1.1",
+    "fs": "^0.0.1-security",
     "koa": "^2.14.1",
     "koa-bodyparser": "^4.3.0",
     "koa-logger": "^3.2.1",
@@ -16,5 +17,22 @@
     "tsc-watch": "^6.0.0",
     "typescript-is": "^0.19.0",
     "zod": "^3.20.2"
-  }
+  },
+  "name": "coin-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoonRainy21/coin-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoonRainy21/coin-backend/issues"
+  },
+  "homepage": "https://github.com/MoonRainy21/coin-backend#readme",
+  "description": ""
 }

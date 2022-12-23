@@ -5,7 +5,7 @@ import { BoothEventModel } from "../../models/connection";
 import { State } from "../../util/types";
 
 interface Query {
-    reviewed : boolean
+    isApproved : string
 }
 
 export const getEventAsync = async (ctx: ParameterizedContext<State>, next: Next) => {
@@ -14,8 +14,8 @@ export const getEventAsync = async (ctx: ParameterizedContext<State>, next: Next
         ctx.response.status = 200
         ctx.body = documents
     }
-    else if (equals<Query>(ctx.request.query)) {
-        const documents = await BoothEventModel.find({ isApproved : (ctx.reqest.query.reviewed ? true : undefined) }).lean().exec()
+    else if (ctx.request.query.isApproved === 'false' || ctx.request.query.isApproved === 'true') {
+        const documents = await BoothEventModel.find({ isApproved : false }).lean().exec()
         ctx.response.status = 200
         ctx.body = documents
     }

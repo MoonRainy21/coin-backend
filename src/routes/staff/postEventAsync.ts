@@ -21,10 +21,13 @@ export const postEventAsync = async (ctx: ParameterizedContext<State>, next: Nex
     ctx.assert(user, 404)
 
     const model = new BoothEventModel({
-        ...boothEvent,
+        eventName: boothEvent.eventName,
+        value: boothEvent.value,
+        boothName: boothEvent.boothName,
         kyoId: bodyparse.data.kyoId,
         time: new Date(),
-        id: hash(bodyparse.data.kyoId+bodyparse.data.eventName+(new Date()).toISOString())
+        id: hash(bodyparse.data.kyoId+bodyparse.data.eventName+(new Date()).toISOString()),
+        isApproved: false
     })
     await model.save()
 
