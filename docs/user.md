@@ -1,34 +1,70 @@
 ## /user
 
-### GET /
-#### Header
-None
-#### Query
-None
-#### Body
-None
-#### response
-status
-200 : ok
-401 : unauthorized
-body
-User
+### GET `/`
+requires checking if the hashing of api key in header is inside `USERS`  
+GETs the user data after authentication
 
-### POST /login
-#### Header
+### Request Header(Auth)
+
+| Key       | Value  | 
+| x-api-key | string |
+
+
+### Request Body
+
 None
-#### Query
+
+### Response Body
+[`User`](./types.md)
+```ts
+{
+    kyoId : string,
+    money : number,
+    totalMoney : number,
+    password: string,
+    lastEvents: BoothEvent[]
+}
+```
+
+### Response Result
+
+| code | message                           |
+| ---- | --------------------------------- |
+| 200  | Success                           |
+| 401  | Unauthorized |
+
+
+### POST `/login`
+
+### Request Header(Auth)
 None
-#### Body
+| Key       | Value  | 
+| --------- | ------ |
+
+### Request Body
 ```ts
 {
     id: string,
     password: string //password should be encoded with SHA(384)
 }
 ```
-#### response
-status
-200 : ok
-401 : unauthorized
-body
-User
+
+### Response Body
+[`User`](./types.md)
+```ts
+{
+    kyoId : string,
+    money : number,
+    totalMoney : number,
+    password: string,
+    lastEvents: BoothEvent[]
+}
+```
+
+### Response Result
+
+| code | message                           |
+| ---- | --------------------------------- |
+| 200  | Success                           |
+| 401  | Unauthorized |
+
