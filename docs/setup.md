@@ -44,7 +44,7 @@ and add the following:
 export const MONGODB_URI: string = //(your mongodb uri)
 ```
 
-Next, add the booth events as a list of type [`BasicBoothEvent`](docs/types.md) in `boothEvents.ts`.
+Next, add the booth events as a list of type [`BasicBoothEvent`](../docs/types.md) in `boothEvents.ts`.
 As an example, add:
 ```ts
 import { BasicBoothEvent } from "../util/types";
