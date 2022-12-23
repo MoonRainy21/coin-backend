@@ -67,4 +67,4 @@ export const USERS: string[] = //[list of hashed user api keys as string]
 
 To authenticate a user, you should include api keys(in the form of kyoId+(extra string)) in the request headers and include the hashed api key within `secret/users.ts`.
 To authenticate a staff or administrator, you should include api keys(any form) in the request headers and include the hashed api key within `secret/staffs.ts` and `secret/admins.ts` respectively.
-See [`./src/middleware/auth.ts`](src/middleware/auth.ts) for details.
+See [`/src/middleware/auth.ts`](../src/middleware/auth.ts) for details.
