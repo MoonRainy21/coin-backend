@@ -1,9 +1,8 @@
-import Router from "@koa/router";
 import compose from "koa-compose";
 
-import userRouter from './user'
-import staffRouter from './staff'
-import adminRouter from './admin'
+import adminRouter from './admin';
+import staffRouter from './staff';
+import userRouter from './user';
 
 export const router = compose([
     userRouter.routes(),

@@ -4,6 +4,7 @@ import { UserModel } from "../../models/connection";
 import { State } from "../../util/types";
 
 export const getUsersAsync = async (ctx: ParameterizedContext<State>, next: Next) => {
+    console.log(ctx.request.url)
     if (JSON.stringify(ctx.request.query) === JSON.stringify({})) {
         const document = await UserModel.find({}).lean().exec()
         ctx.response.status = 200

@@ -4,6 +4,6 @@ import { postEventAsync } from "./postEventAsync";
 
 const router = new Router<State>()
 
-router.post('/event', postEventAsync)
+router.post('/staff/event', postEventAsync)
 
 export default router

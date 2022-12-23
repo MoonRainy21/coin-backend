@@ -9,7 +9,7 @@ const app = new Koa()
 const PORT = 3333
 
 app.use(cors({ credentials: true }))
-app.use(commandLineLogger)
+app.use(commandLineLogger())
 app.use(bodyParser())
 app.use(authRequired())
 
