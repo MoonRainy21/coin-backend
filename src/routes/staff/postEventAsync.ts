@@ -6,6 +6,7 @@ import { State } from "../../util/types";
 import { hash } from "../../util/hash"
 
 export const postEventAsync = async (ctx: ParameterizedContext<State>, next: Next) => {
+    console.log('serw')
     const bodyparse = z.object({
         kyoId: z.string(),
         eventName: z.string()

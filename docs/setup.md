@@ -18,7 +18,7 @@ This repository uses typescript, so run the following before starting server:
 ```shell
 tsc
 npm -g install tsc-watch
-tsc-watch --on-Success "node dist"
+tsc-watch --onSuccess "node dist"
 ```
 
 
@@ -65,6 +65,6 @@ export const USERS: string[] = //[list of hashed user api keys as string]
 
 ### Authorization
 
-To authenticate a user, you should include api keys(in the form of kyoId+(extra string)) in the request headers and include the hashed api key within `secret/users.ts`.  
-To authenticate a staff or administrator, you should include api keys(any form) in the request headers and include the hashed api key within `secret/staffs.ts` and `secret/admins.ts` respectively.  
+To authenticate a user, you should include x-api-keys(in the form of kyoId + hash(pwd)) in the request headers and include hash(x-api-key) within `secret/users.ts`.  
+To authenticate a staff or administrator, you should include x-api-keys(hash(pwd)) in the request headers and include hash(x-api-key) within `secret/staffs.ts` and `secret/admins.ts` respectively.  
 See [`/src/middleware/auth.ts`](../src/middleware/auth.ts) for details.  

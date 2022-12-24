@@ -4,17 +4,20 @@
 requires checking if the hashing of api key in header is inside `USERS`  
 GETs the user data after authentication
 
-### Request Header(Auth)
+#### Request Header(Auth)
 
-| Key       | Value  | 
+| Key       | Value  |
+| --------- | ------ | 
 | x-api-key | string |
 
+(secret key is encrypted with SHA(384))
+See `Authorization` at [`docs/setup`](./setup) for details
 
-### Request Body
 
+#### Request Body
 None
 
-### Response Body
+#### Response Body
 [`User`](./types.md)
 ```ts
 {
@@ -26,30 +29,31 @@ None
 }
 ```
 
-### Response Result
+#### Response Result
 
-| code | message                           |
+| Status | Message                           |
 | ---- | --------------------------------- |
-| 200  | Success                           |
-| 401  | Unauthorized |
+| 200  | Ok                           |
+| 403  | Forbidden |
 
 
 ### POST `/login`
 
-### Request Header(Auth)
+
+#### Request Header
+
+| Key       | Value  |
+| --------- | ------ | 
+| x-api-key | string |
+
+(secret key is encrypted with SHA(384))
+See `Authorization` at [`docs/setup`](./setup) for details
+
+
+#### Request Body
 None
-| Key       | Value  | 
-| --------- | ------ |
 
-### Request Body
-```ts
-{
-    id: string,
-    password: string //password should be encoded with SHA(384)
-}
-```
-
-### Response Body
+#### Response Body
 [`User`](./types.md)
 ```ts
 {
@@ -61,10 +65,10 @@ None
 }
 ```
 
-### Response Result
+#### Response Result
 
-| code | message                           |
+| Status | Message                           |
 | ---- | --------------------------------- |
-| 200  | Success                           |
+| 200  | Ok                           |
 | 401  | Unauthorized |
 
