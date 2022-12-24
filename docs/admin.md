@@ -15,7 +15,7 @@ query is not required; if there is no query, response body will be all events
 
 | Key       | Value  |
 | --------- | ------ | 
-| isApproved? | string( = "false" || "true") |
+| isApproved? | string( = "false" or "true") |
 
 
 #### Response Result
