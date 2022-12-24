@@ -2,7 +2,7 @@ import { Next, ParameterizedContext } from "koa";
 import { z } from "zod";
 import { BoothEventModel, UserModel } from "../../models/connection";
 import { WriteMoneyLog } from "../../util/logger";
-import { State } from "../../util/types";
+import { BoothEvent, State } from "../../util/types";
 
 export const patchEventAsync = async (ctx: ParameterizedContext<State>, next: Next) => {
     const bodyparse = z.object({
@@ -24,12 +24,22 @@ export const patchEventAsync = async (ctx: ParameterizedContext<State>, next: Ne
     const user = await UserModel.findOne({kyoId: sId}).exec()
     ctx.assert(user, 404)
 
-    WriteMoneyLog(boothEvent)
+    const _boothEvent: BoothEvent = {
+        kyoId: boothEvent.kyoId,
+        eventName: boothEvent.eventName,
+        boothName: boothEvent.boothName,
+        value: boothEvent.value,
+        time: boothEvent.time,
+        id: boothEvent.id,
+        isApproved: true,
+    }
+
+    WriteMoneyLog(_boothEvent)
 
     await user.updateOne({
-        money: user.money+boothEvent.value,
-        totalMoney: user.totalMoney+(boothEvent.value > 0 ? boothEvent.value : 0),
-        lastEvents: user.lastEvents.concat([boothEvent])
+        money: user.money+_boothEvent.value,
+        totalMoney: user.totalMoney+(_boothEvent.value > 0 ? _boothEvent.value : 0),
+        lastEvents: user.lastEvents.concat([_boothEvent])
     })
     ctx.response.status = 200
 }
