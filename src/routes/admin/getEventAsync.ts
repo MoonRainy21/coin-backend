@@ -14,8 +14,13 @@ export const getEventAsync = async (ctx: ParameterizedContext<State>, next: Next
         ctx.response.status = 200
         ctx.body = documents
     }
-    else if (ctx.request.query.isApproved === 'false' || ctx.request.query.isApproved === 'true') {
+    else if (ctx.request.query.isApproved === 'false') {
         const documents = await BoothEventModel.find({ isApproved : false }).lean().exec()
+        ctx.response.status = 200
+        ctx.body = documents
+    }
+    else if (ctx.request.query.isApproved === 'true') {
+        const documents = await BoothEventModel.find({ isApproved : true }).lean().exec()
         ctx.response.status = 200
         ctx.body = documents
     }

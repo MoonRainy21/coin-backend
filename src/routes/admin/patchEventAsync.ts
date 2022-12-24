@@ -7,7 +7,7 @@ import { State } from "../../util/types";
 export const patchEventAsync = async (ctx: ParameterizedContext<State>, next: Next) => {
     const bodyparse = z.object({
         id: z.string(),
-        isApproved: z.boolean()
+        isApproved: z.boolean() // should always be true
     }).safeParse(ctx.request.body)
     ctx.assert(bodyparse.success, 400)
 
