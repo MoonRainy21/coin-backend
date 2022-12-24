@@ -10,7 +10,7 @@ GETs the user data after authentication
 | --------- | ------ | 
 | x-api-key | string |
 
-(secret key is encrypted with SHA(384))
+(secret key is encrypted with SHA(384))  
 See `Authorization` at [`docs/setup`](./setup) for details
 
 
@@ -46,7 +46,7 @@ None
 | --------- | ------ | 
 | x-api-key | string |
 
-(secret key is encrypted with SHA(384))
+(secret key is encrypted with SHA(384))  
 See `Authorization` at [`docs/setup`](./setup) for details
 
 
