@@ -98,7 +98,8 @@ See `Authorization` at [`docs/setup`](./setup) for details
 ```ts
 {
     kyoId: string,
-    incresement: number // beware of spelling typo
+    incresement: number, // beware of spelling typo
+    eventName?: string //not required
 }
 ```
 #### Response Result

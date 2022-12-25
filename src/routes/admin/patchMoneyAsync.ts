@@ -18,8 +18,8 @@ export const patchMoneyAsync = async (ctx: ParameterizedContext<State>, next: Ne
 
     WriteMoneyLog({
         kyoId: bodyparse.data.kyoId,
-        boothName: "Admin",
-        eventName: bodyparse.data.eventName ?? "Admin",
+        boothName: "ATM",
+        eventName: bodyparse.data.eventName ?? "ATM",
         time: new Date(),
         value: bodyparse.data.incresement,
         id: ""
@@ -27,8 +27,8 @@ export const patchMoneyAsync = async (ctx: ParameterizedContext<State>, next: Ne
 
     const _adminBoothEvent: BoothEvent = {
         kyoId: bodyparse.data.kyoId,
-        eventName: "Admin",
-        boothName: bodyparse.data.eventName ?? "Admin",
+        eventName: "ATM",
+        boothName: bodyparse.data.eventName ?? "ATM",
         value: bodyparse.data.incresement,
         time: new Date(),
         id: hash(bodyparse.data.kyoId+"ATM"+(new Date()).toISOString()),
