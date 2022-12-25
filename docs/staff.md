@@ -8,7 +8,7 @@
 | x-api-key | string |
 
 (secret key is encrypted with SHA(384))  
-See `Authorization` at [`docs/setup`](./setup) for details
+See `Authorization` at [`docs/setup`](./setup.md) for details
 
 #### Request Body
 ```ts

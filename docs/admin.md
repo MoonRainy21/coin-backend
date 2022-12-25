@@ -8,7 +8,7 @@
 | x-api-key | string |
 
 (secret key is encrypted with SHA(384))  
-See `Authorization` at [`docs/setup`](./setup) for details
+See `Authorization` at [`docs/setup`](./setup.md) for details
 
 #### Request Query
 query is not required; if there is no query, response body will be all events
@@ -37,7 +37,7 @@ Event[]
 | x-api-key | string |
 
 (secret key is encrypted with SHA(384))  
-See `Authorization` at [`docs/setup`](./setup) for details
+See `Authorization` at [`docs/setup`](./setup.md) for details
 
 #### Request Query
 query is not required; if there is no query, response body will be all users
@@ -66,7 +66,7 @@ query is not required; if there is no query, response body will be all users
 | x-api-key | string |
 
 (secret key is encrypted with SHA(384))  
-See `Authorization` at [`docs/setup`](./setup) for details
+See `Authorization` at [`docs/setup`](./setup.md) for details
 
 #### Request Body
 ```ts
@@ -82,6 +82,7 @@ See `Authorization` at [`docs/setup`](./setup) for details
 | 400 | Bad Request(when request body is not in the right format) |
 | 403 | Forbidden     |
 | 404 | Not Found      |
+| 409 | Conflict(when boothEvent is already approved) |
 
 
 ### PATCH `/money`
@@ -92,7 +93,7 @@ See `Authorization` at [`docs/setup`](./setup) for details
 | x-api-key | string |
 
 (secret key is encrypted with SHA(384))  
-See `Authorization` at [`docs/setup`](./setup) for details
+See `Authorization` at [`docs/setup`](./setup.md) for details
 
 #### Request Body
 ```ts
@@ -109,3 +110,4 @@ See `Authorization` at [`docs/setup`](./setup) for details
 | 400 | Bad Request(when request body is not in the right format) |
 | 403 | Forbidden     |
 | 404 | Not Found      |
+
